@@ -5,43 +5,26 @@ import java.text.DecimalFormat;
 /**
  * Created by noumanm on 7/12/17.
  */
-public class UnitCalculator {
+public class UnitCalculator{
+
+    private static final String INCH = "Inch";
+    private static final String CENTIMETER = "Centimeter";
+    private static final String GALLON = "Gallon";
+    private static final String LITERS = "Liters";
 
     public Unit add(Unit one, Unit two){
         Unit result = new Unit(0, "");
-        if(one.getType().equalsIgnoreCase(two.getType())){
-            result.setValue(one.getValue()+two.getValue());
-            result.setType(one.getType());
-        }else {
-            String inch = "Inch";
-            String centimeter = "Centimeter";
-            InchToCm(one, two, result, inch, centimeter, addInchToCentimeter(one, two));
-            String gallon = "Gallon";
-            String liters = "Liters";
-            InchToCm(one, two, result, gallon, liters, addGallonToLiters(one, two));
-        }
+        CalculationStrategy calculationStrategy = null;
 
-        return result;
+        if(one.getType().equalsIgnoreCase(two.getType()))
+            calculationStrategy = CalculatorConditionSet.ADD_EQUAL_UNITS;
+
+        if (one.getType().equalsIgnoreCase(INCH) && two.getType().equalsIgnoreCase(CENTIMETER))
+            calculationStrategy = CalculatorConditionSet.ADD_INCH_TO_CENTIMETER;
+
+        if (one.getType().equalsIgnoreCase(GALLON) && two.getType().equalsIgnoreCase(LITERS))
+            calculationStrategy = CalculatorConditionSet.ADD_GALLON_TO_LITERS;
+
+        return calculationStrategy.calculate(one, two);
     }
-
-    private void InchToCm(Unit one, Unit two, Unit result, String inch, String centimeter, double value) {
-        if (one.getType().equalsIgnoreCase(inch) && two.getType().equalsIgnoreCase(centimeter)) {
-            result.setValue(value);
-            result.setType(one.getType());
-        }
-    }
-
-    private double addInchToCentimeter(Unit inch, Unit centimeter) {
-        return (inch.getValue() + (centimeter.getValue()/2.5));
-    }
-
-    private double addGallonToLiters(Unit gallon, Unit liters) {
-
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
-        String res=numberFormat.format(gallon.getValue()*3.78 + (liters.getValue()));
-        return Double.parseDouble(res);
-    }
-
-//    1 gallon = 3.78 liters
-//    1 gallon + 1 liters = 4.78 liters
 }
