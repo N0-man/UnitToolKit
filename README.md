@@ -2,7 +2,7 @@
 
 ThoughtWrorks BootCamp BOOM!!!!
 
-# Feature 1: 1ft = 12inch
+## Feature 1: 1ft = 12inch
 # Feature 2: 3ft = 1yard
 # Feature 3: 1inch = 2.54cm
 # Feature 4: 3.78liters = 1gallon
