@@ -1,4 +1,4 @@
-package com.compare;
+package com.unittoolkit;
 
 import org.junit.Test;
 
@@ -91,5 +91,16 @@ public class UnitComparatorTest {
         boolean result = comparator.isEqual(twoOneTwoF, hundredC);
 
         assertThat(result, is(true));
+    }
+
+    @Test
+    public void CompareReturnsNegative_When_IncompatibleUnitsAreCompared() {
+        Unit twoOneTwoGallon = new Unit(212, "Gallon");
+        Unit hundredInch = new Unit(100 , "Inch");
+        UnitComparator comparator = new UnitComparator();
+
+        boolean result = comparator.isEqual(twoOneTwoGallon, hundredInch);
+
+        assertThat(result, is(false));
     }
 }

@@ -1,4 +1,4 @@
-package com.compare;
+package com.unittoolkit;
 
 import org.junit.Test;
 
@@ -41,6 +41,15 @@ public class UnitCalculatorTest {
         assertThat(fourPointSevenEightGallon.getValue(), is(4.78));
     }
 
+    @Test
+    public void Must_NotAddAndDefaultToZero_When_IncompatibleUnits_IsGiven () {
+        Unit oneMile = new Unit(1, "Miles");
+        Unit oneLiter = new Unit(1 , "Liters");
+
+        UnitCalculator unitCalculator = new UnitCalculator();
+        Unit incompitableUnits = unitCalculator.add(oneMile,oneLiter);
+        assertThat(incompitableUnits.getValue(), is(0.0));
+    }
 
 
 }

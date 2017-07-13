@@ -1,4 +1,4 @@
-package com.compare;
+package com.unittoolkit;
 
 import java.text.DecimalFormat;
 
@@ -30,6 +30,12 @@ public enum CalculatorConditionSet  implements CalculationStrategy{
             Unit result = new Unit(0.0, one.getType());
             result.setValue(one.getValue()+two.getValue());
             return result;
+        }
+    },
+
+    DEFAULT_UNIT {
+        public Unit calculate (Unit one, Unit two) {
+            return new Unit(0.0, "");
         }
     }
 }
