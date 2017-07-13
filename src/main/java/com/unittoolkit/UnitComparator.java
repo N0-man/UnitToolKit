@@ -10,13 +10,13 @@ import java.util.Map;
  */
 public class UnitComparator {
 
-    public static final int TWELVE = 12;
-    public static final int THREE = 3;
-    public static final double TWO_POINT_FIVE_FOUR = 2.54;
-    public static final double THREE_POINT_SEVEN_EIGHT = 3.78;
-    public static final int THIRTYTWO = 32;
-    public static final int FIVE = 5;
-    public static final int NINE = 9;
+    private static final int TWELVE = 12;
+    private static final int THREE = 3;
+    private static final double TWO_POINT_FIVE_FOUR = 2.54;
+    private static final double THREE_POINT_SEVEN_EIGHT = 3.78;
+    private static final int THIRTYTWO = 32;
+    private static final int FIVE = 5;
+    private static final int NINE = 9;
 
 
     public boolean isEqual (Unit one, Unit two) {
