@@ -12,7 +12,7 @@ import static org.junit.Assert.assertThat;
 public class UnitCalculatorTest {
 
     @Test
-    public void ShouldAddTwoUnitsOfSameType() {
+    public void Should_AddTwoUnitsOfSameType() {
         Unit twoInches = new Unit(2, "Inch");
         Unit threeInches = new Unit(3 , "Inch");
 
@@ -22,7 +22,7 @@ public class UnitCalculatorTest {
     }
 
     @Test
-    public void ShouldAddTwoUnitsOfDifferentType() {
+    public void Should_AddTwoUnitsOfDifferentType() {
         Unit twoInches = new Unit(2, "Inch");
         Unit twoPointFiveCm = new Unit(2.5 , "Centimeter");
 
@@ -32,7 +32,7 @@ public class UnitCalculatorTest {
     }
 
     @Test
-    public void ShouldAddTwoVolumeOfDifferentType() {
+    public void Should_AddTwoVolumeOfDifferentType() {
         Unit oneGallon = new Unit(1, "Gallon");
         Unit oneLiter = new Unit(1 , "Liters");
 
@@ -42,7 +42,7 @@ public class UnitCalculatorTest {
     }
 
     @Test
-    public void Must_NotAddAndDefaultToZero_When_IncompatibleUnits_IsGiven () {
+    public void Should_NotAdd_When_IncompatibleUnits_IsGiven () {
         Unit oneMile = new Unit(1, "Miles");
         Unit oneLiter = new Unit(1 , "Liters");
 
