@@ -1,6 +1,6 @@
 # UnitToolKit
 
-ThoughtWrorks BootCamp BOOM!!!! Day 1
+ThoughtWrorks BootCamp BOOM!!!! Day 1 July 11
 ```
 #ChangingRequirements
 #TestFirst
